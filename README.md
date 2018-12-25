@@ -1,11 +1,15 @@
 # v5-css-layout
 
 v5-css-layout H5、小程序页面布局样式等
-感觉不应用样式布局，都不会写页面了，MMP~,css 布局样式主要参考[ionic 框架样式](https://ionicframework.com/docs/api/components/grid/Grid)
+css 布局样式主要参考[ionic 框架样式](https://ionicframework.com/docs/api/components/grid/Grid)
+
+~感觉不应用样式布局，都不会写页面了，MMP~
 
 `icon.scss` 以`v5-` 开头
 
 # 使用
+
+目前个人主要使用 [Taro](https://github.com/NervJS/taro)，进行开发，打算使用 Taro 结合改样式开发一些页面，待计划~
 
 略~
 
@@ -68,6 +72,12 @@ H5 端可以
 小程序不支持 子选择符 `>`，支持 id、class 这类选择器，足以~
 不要使用属性选择符，对于 Taro 这会不支持
 推荐`class`。
+
+# TODO
+
+-   使用 `Taro` 完成该库的相关页面实现
+-   常用组件制作~
+-   添加封装相应功能库，如统一请求 request 拦截等
 
 # 参考
 
