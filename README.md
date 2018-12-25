@@ -1,49 +1,43 @@
-# bc-css-layout
-bc-css-layout H5，小程序页面布局样式等
-感觉不应用样式布局，都不会写页面了，MMP~,css布局样式主要参考[ionic框架样式](https://ionicframework.com/docs/api/components/grid/Grid)
+# v5-css-layout
+
+v5-css-layout H5、小程序页面布局样式等
+感觉不应用样式布局，都不会写页面了，MMP~,css 布局样式主要参考[ionic 框架样式](https://ionicframework.com/docs/api/components/grid/Grid)
+
+`icon.scss` 以`v5-` 开头
 
 # 使用
-均已以`bc-` 开头;
 
-# 简介
-## css rest
-小程序没有所谓的html标签概念，所以不需要！
-H5端可以
 略~
 
-## 常用的css 集合
+# 简介
 
+## css rest
 
+小程序没有所谓的 html 标签概念，所以不需要！
+H5 端可以
+略~
 
+## 常用的 css 集合
 
 ## flex 布局
+
 ```html
- <View className="row justify-content-around">
-	<View className="col align-self-start">
-	  <Text>1 of 4</Text>
-	  <View className="row justify-content-between">
-		<View className="col align-self-start">
-		  <Text>1 of 4</Text>
-		</View>
-		<View className="col align-self-end">
-		  <Text>3 of 4</Text>
-		</View>
-	  </View>
-	</View>
-	<View className="col align-self-center">
-	  <Text>2 of 4</Text>
-	</View>
-	<View className="col align-self-end">
-	  <Text>3 of 4</Text>
-	</View>
-	<View className="col">
-	  <Text>
-		4 of 4 <Text>#</Text>
-		<Text>#</Text>#
-	  </Text>
-	</View>
- </View>
+<View className="row justify-content-around">
+    <View className="col align-self-start">
+        <Text>1 of 4</Text>
+        <View className="row justify-content-between">
+            <View className="col align-self-start"> <Text>1 of 4</Text> </View>
+            <View className="col align-self-end"> <Text>3 of 4</Text> </View>
+        </View>
+    </View>
+    <View className="col align-self-center"> <Text>2 of 4</Text> </View>
+    <View className="col align-self-end"> <Text>3 of 4</Text> </View>
+    <View className="col">
+        <Text> 4 of 4 <Text>#</Text> <Text>#</Text># </Text>
+    </View>
+</View>
 ```
+
 也可在外层包裹 `className="grid"`
 
 ## 图标
@@ -59,6 +53,7 @@ H5端可以
     text-align: center;
 }
 ```
+
 ```
 <ui-row border-top border-bottom height="40" space-bottom="20">
         <ui-col border-right align="center"  hover-stop-propagation vertical-align="middle">25%</ui-col>
@@ -68,15 +63,12 @@ H5端可以
 </ui-row>
 ```
 
-
 # 问题？
-小程序不支持 子选择符 `>`，支持id、class这类选择器，足以~
-不要使用属性选择符，对于Taro这会不支持
-推荐`class`。
 
+小程序不支持 子选择符 `>`，支持 id、class 这类选择器，足以~
+不要使用属性选择符，对于 Taro 这会不支持
+推荐`class`。
 
 # 参考
 
 [小程序组件化解决方案](http://www.wetouch.net/touchwx_doc/transform/transform/transform)。
-
-
