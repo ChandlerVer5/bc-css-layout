@@ -1,0 +1,304 @@
+
+/* ========================================================================
+   Component: Flex 以下样式来自ionicframework
+ ========================================================================== */
+
+/***
+* https://ionicframework.com/docs/api/components/grid/Grid/#grid-tiers
+* The grid is a mobile-first system made up of any number of rows and columns
+*/
+
+.grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/*=======row=====*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.nowrap {
+    flex-wrap: nowrap;
+}
+.row.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+.row.align-items-start{
+    align-items: flex-start;
+}
+.row.align-items-center{
+    align-items: center;
+}
+.row.align-items-end {
+    align-items: flex-end;
+}
+.row.align-items-stretch {
+    align-items: stretch;
+}
+.row.align-items-baseline {
+    align-items: baseline;
+}
+.row.justify-content-start {
+    justify-content: flex-start;
+}
+.row.justify-content-center {
+    justify-content: center;
+}
+.row.justify-content-end {
+    justify-content: flex-end;
+}
+.row.justify-content-around{
+    justify-content: space-around;
+}
+.row.justify-content-between {
+    justify-content: space-between;
+}
+
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+}
+.col {
+    width: 100%;
+    margin: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.col.align-self-start{
+    align-self: flex-start;
+}
+.col.align-self-end {
+    align-self: flex-end;
+}
+.col.align-self-center{
+    align-self: center;
+}
+.col.align-self-stretch{
+    align-self: stretch;
+}
+.col.align-self-baseline{
+    align-self: baseline;
+}
+
+@for $i from 1 through 12{
+    .col-#{$i}{
+      flex: 0 0 100%/12*$i;
+      width: 100%/12*$i;
+      max-width: 100%/12*$i;
+    }
+}
+
+.pull-0 {
+    right: auto;
+}
+@for $i from 1 through 12{
+	.pull-#{$i} {
+      right: 100%/12*$i;
+    }
+}
+// Offsetting columns
+.push-0 {
+    left: auto;
+}
+@for $i from 1 through 12{
+	.push-#{$i} {
+      left: 100%/12*$i;
+    }
+}
+
+//Offsetting columns
+@for $i from 1 through 12{
+	.offset-#{$i} {
+      margin-left: 100%/12*$i;
+    }
+}
+
+
+/**
+====css Utilities===
+**/
+
+// .ellipsis(@w:auto) {
+//     width: @w;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     word-wrap: normal;
+// }
+
+.elli {
+  overflow: hidden; /* 超出一行文字自动隐藏*/
+  text-overflow: ellipsis; /* 文字隐藏后添加省略号*/
+  white-space: nowrap; /* 强制不换行*/
+}
+
+// .ellipsisLn(@line) {
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-line-clamp: @line;
+// }
+.multi-elli {
+  /* 多行显示、并加省略号 */
+  display: -webkit-box;
+  line-height: 33rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+.setTapColor(@c:rgba(0,0,0,0)) {
+    -webkit-tap-highlight-color: @c;
+}
+*/
+
+
+
+* {
+  box-sizing: border-box;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+/*
+.ion-ios-add:before {
+    content: "\f102";
+}
+.ion-ios-add-outline:before {
+    content: "\f102";
+}
+*/
+.content {
+    left: 0;
+    top: 0;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    contain: layout size style;
+}
+
+.scroll-content {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    contain: size style layout;
+}
+.content.js-scroll > .scroll-content {
+    position: relative;
+    min-height: 100%;
+    overflow-x: initial;
+    overflow-y: initial;
+    -webkit-overflow-scrolling: auto;
+    will-change: initial;
+}
+.disable-scroll .bc-page {
+    pointer-events: none;
+    touch-action: none;
+}
+
+.fixed-content {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+}
+.fixed {
+    position: absolute;
+    z-index: 999;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.no-padding {
+    padding: 0;
+}
+.no-margin{
+    margin: 0;
+}
+.content-ios{
+    color: #000;
+    background-color: #fff;
+}
+
+.content-ios hr {
+    height: 0.55rpx;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+/*
+@media screen and (orientation: landscape) {
+    ion-app.md [padding-left] .scroll-content {
+        padding-left: calc(constant(safe-area-inset-left) + 16px);
+        padding-left: calc(env(safe-area-inset-left) + 16px);
+    }
+}
+*/
+
+
+// 文本
+//连字符
+.hyphens {
+     word-wrap:break-word;
+     -webkit-hyphens:auto;
+     hyphens:auto;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+    text-align: left ;
+}
+.text-right {
+    text-align: right;
+}
+.text-justify {
+    text-align: justify ;
+}
+.text-wrap {
+    white-space: normal 
+}
+.text-nowrap {
+   white-space: nowrap 
+}
+
+.text-uppercase {
+  /* stylelint-disable-next-line declaration-no-important */
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  /* stylelint-disable-next-line declaration-no-important */
+  text-transform: lowercase;
+}
+
+//每个单词首字母大写
+.text-capitalize{
+  /* stylelint-disable-next-line declaration-no-important */
+  text-transform: capitalize;
+}
+
+
